@@ -11,7 +11,10 @@ import { DetalleComponent } from '../detalle/detalle.component';
 export class SlideshowParesComponent implements OnInit {
 
 
+  //Recibe un arreglo de peliculas
   @Input() peliculas: Pelicula[] = [];
+
+  //Da más peliculas
   @Output() cargarMas = new EventEmitter();
 
   slideOpts={
@@ -23,10 +26,12 @@ export class SlideshowParesComponent implements OnInit {
 
   ngOnInit() {}
 
+  //carga más peliculas de populares
   onClick(){
     this.cargarMas.emit();
   }
 
+  //Es para ver detalles
   async verDetalle(id: string){
     const modal = await this.modalCtrl.create({
       component: DetalleComponent,

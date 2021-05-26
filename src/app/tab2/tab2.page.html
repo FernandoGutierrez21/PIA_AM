@@ -8,6 +8,9 @@
 
 
 <ion-toolbar>
+  <!--Pra buscar que se tarde 700ms, que value el texto que escriba 
+  y cuando busca, de fonde en la barra 
+del buscador aparece el texto "Buscar película"-->
   <ion-searchbar placeholder="Buscar película" 
                  animated 
                  debounce="700" 
@@ -19,7 +22,7 @@
 
 <ion-content [fullscreen]="true">
 
-
+  <!--"Buscar película" si esta buscando entonces aparece una animacion-->
   <ion-grid *ngIf="buscando">
     <ion-row >
       <ion-col text-center>
@@ -30,7 +33,7 @@
 
 
 
-
+  <!--Si la el texto de la barra es vacío-->
   <ion-list *ngIf="peliculas.length === 0">
 
     <ion-list-header>

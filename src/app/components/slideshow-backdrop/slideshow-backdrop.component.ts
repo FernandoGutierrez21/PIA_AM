@@ -10,8 +10,10 @@ import { DetalleComponent } from '../detalle/detalle.component';
 })
 export class SlideshowBackdropComponent implements OnInit {
 
+  //Pide un arreglo de peliculas
   @Input() peliculas: Pelicula[] = [];
 
+   //Las opciones y su acomodo
   slideOpts = {
     slidesPerView: 1.1,
     freeMode: true

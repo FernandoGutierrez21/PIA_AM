@@ -24,10 +24,12 @@ export class Tab1Page implements OnInit {
     this.getPopulares();
   }
 
+  //carga más peliculas titulares con el boton
   cargarMas() {
     this.getPopulares();
   }
 
+  //obtiene las peliculas titulares
   getPopulares() {
     this.moviesService.getPopulares()
     .subscribe( resp => {

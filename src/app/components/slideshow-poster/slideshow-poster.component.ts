@@ -10,8 +10,10 @@ import { DetalleComponent } from '../detalle/detalle.component';
 })
 export class SlideshowPosterComponent implements OnInit {
 
+  //recibe un arreglo de peliculas
   @Input() peliculas: Pelicula[]=[];
 
+  //para las opciones o configuraciones de los slides
   slideOpts={
     slidesPerView: 3.1,
     freeMode: true,
@@ -22,6 +24,7 @@ export class SlideshowPosterComponent implements OnInit {
 
   ngOnInit() {}
 
+  //para ver detalles
   async verDetalle(id: string){
     const modal = await this.modalCtrl.create({
       component: DetalleComponent,
@@ -30,6 +33,7 @@ export class SlideshowPosterComponent implements OnInit {
       }
     });
 
+    //para mostrar la infromacion
     modal.present();
   }
 

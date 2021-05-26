@@ -9,6 +9,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { ComponentsModule } from '../components/components.module';
 
+//SE AÑADEN LOS IMPORTS QUE SE USAN EN el tabs1
 @NgModule({
   imports: [
     IonicModule,

@@ -1,7 +1,10 @@
+  <!--Es el estilo de las opciones en los slides-->
 <ion-slides [options]="slideOpts">
 
+  <!--*ngFor para recorrer las pelicuas-->
   <ion-slide *ngFor="let pelicula of peliculas">
 
+    <!--haciendo click muetra los detalles de la pelicula-->
     <ion-card (click)="verDetalle( pelicula.id )">
       <img [src]="pelicula.backdrop_path | imagen">
     </ion-card>

@@ -82,8 +82,11 @@
 </ion-content>
 
 <ion-footer no-border>
+
+  <!--Toolbar para que aparezca abajo el boton y su contenido--> 
   <ion-toolbar>
 
+    <!--Botton para volver hacia la pestaña anterior--> 
     <ion-buttons slot="start">
       <ion-button (click)="regresar()">
         <ion-icon slot="start" name="arrow-round-back"></ion-icon>
@@ -91,6 +94,7 @@
       </ion-button>
     </ion-buttons>
 
+    <!--Botton para añadir a favoritos--> 
     <ion-buttons slot="end">
       <ion-button (click)="favorito()">
         <ion-label>Favorito</ion-label>

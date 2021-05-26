@@ -8,6 +8,7 @@
     </ion-row>
   </ion-grid>
 
+  <!--Recorre las peliculas por genero-->
   <div *ngFor="let pelicula of favoritoGenero">
     
     <ion-grid  *ngIf="pelicula.pelis.length > 0">
@@ -17,6 +18,8 @@
           <h4>{{ pelicula.genero }}</h4>
         </ion-col>
       </ion-row> 
+
+      <!--Muestra la pelicula y su poster-->
       <app-slideshow-poster [peliculas]="pelicula.pelis"></app-slideshow-poster>
 
     </ion-grid>

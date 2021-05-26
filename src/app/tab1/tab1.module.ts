@@ -9,6 +9,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { PipesModule } from '../pipes/pipes.module';
 import { ComponentsModule } from '../components/components.module';
 
+
+//SE AÑADEN LOS IMPORTS QUE SE USAN EN el tabs1
 @NgModule({
   imports: [
     IonicModule,

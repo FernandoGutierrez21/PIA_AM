@@ -20,11 +20,12 @@ export class Tab3Page {
     private moviesService: MoviesService) { }
 
 
+  //muestra las peliculas por genero
   async ionViewWillEnter() {
     this.peliculas = await this.dataLocal.cargarFavoritos();
     this.generos = await this.moviesService.cargarGeneros();
 
-    this.pelisPorGenero( this.generos, this.peliculas );
+    this.pelisPorGenero(this.generos, this.peliculas);
   }
 
   pelisPorGenero(generos: Genre[], peliculas: PeliculaDetalle[]) {
@@ -33,14 +34,14 @@ export class Tab3Page {
     this.favoritoGenero = [];
 
     //barrer cada uno de los generos del arreglo con el ForEach
-    generos.forEach( genero => {
+    generos.forEach(genero => {
 
       this.favoritoGenero.push({
         genero: genero.name,
         //retornar un nuevo arreglo que cumplan la condicion
-        pelis: peliculas.filter( peli => {
+        pelis: peliculas.filter(peli => {
           //verificamos si el genero id es igual al del arrglo id del genero
-          return peli.genres.find( genre => genre.id === genero.id );
+          return peli.genres.find(genre => genre.id === genero.id);
         })
       });
 

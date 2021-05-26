@@ -1,5 +1,6 @@
 <ion-slides [options]="slideOpts">
 
+  <!--Muestra las peliculas en pares recorreiendolas-->
   <ion-slide *ngFor="let pares of peliculas | pares">
 
     <ion-row>
@@ -14,6 +15,7 @@
 
   </ion-slide>
 
+  <!--Para ver más peliculas clckeando en el boton mas-->
   <ion-slide class="slide-mas">
     <ion-button expand="full" class="btn-mas" size="large" (click)="onClick()">
       <ion-icon name="add" slot="icon-only"></ion-icon>

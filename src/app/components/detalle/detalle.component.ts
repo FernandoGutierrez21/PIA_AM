@@ -12,12 +12,16 @@ import { DataLocalService } from 'src/app/services/data-local.service';
 
 export class DetalleComponent implements OnInit {
 
+  //Pedir el el id con el Input
   @Input() id;
+
+  //Variables para las funciones
   pelicula: PeliculaDetalle = {};
   actores: Cast[] = [];
   oculto = 150;
   estrella = 'star-outline';
 
+  //Las fotos de los actores
   slideOptActores = {
     slidesPerView: 3.3,
     freeMode: true,
@@ -25,31 +29,35 @@ export class DetalleComponent implements OnInit {
   };
 
 
+  //constructor con 3 importantes parametros
   constructor(private moviesService: MoviesService,
     private modalCtrl: ModalController,
     private dataLocal: DataLocalService) { }
 
   ngOnInit() {
-    //console.log('ID', this.id);
-
+    //Si se grega o elimina de favoritos cambia la imagen del icono
     this.dataLocal.existePelicula( this.id ).then( existe => this.estrella = ( existe ) ? 'star' : 'star-outline' );
 
+    //regresa las detalles de la pelicula seleccionada con el parametro id
     this.moviesService.getPeliculaDetalle(this.id).subscribe(resp => {
       console.log(resp);
       console.log(resp);
       this.pelicula = resp;
     });
 
+    //regresa los actores de la pelicula seleccionada con el parametro id
     this.moviesService.getActoresPelicula(this.id).subscribe(resp => {
       console.log(resp);
       this.actores = resp.cast;
     });
   }
 
+  //Se regresa a la pagina anterior
   regresar() {
     this.modalCtrl.dismiss();
   }
 
+  //guarda o elimina la pelicula en SQLite que se llama dataLocal
   favorito() {
     const existe = this.dataLocal.guardarPelicula( this.pelicula );
     this.estrella = ( existe ) ? 'star' : 'star-outline';

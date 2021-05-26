@@ -14,6 +14,7 @@ import { DetalleComponent } from './detalle/detalle.component';
     DetalleComponent
   ],
   declarations: [
+    //Se declaran los Componentes de Slides que los pueda usar components
     SlideshowBackdropComponent, 
     SlideshowPosterComponent,
     SlideshowParesComponent,
@@ -21,6 +22,7 @@ import { DetalleComponent } from './detalle/detalle.component';
   ],
 
   exports:[
+    //Se declaran los Componentes de Slides para usarlos
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
     SlideshowParesComponent,

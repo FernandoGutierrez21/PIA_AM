@@ -1,5 +1,6 @@
 <ion-slides [options]="slideOpts">
 
+  <!--recorre pelicula, entrando ve los detalles y muestra una imagens-->
   <ion-slide *ngFor="let pelicula of peliculas">
     <ion-card (click)="verDetalle( pelicula.id )">
       <img class="poster" [src]="pelicula.poster_path | imagen">

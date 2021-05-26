@@ -1,4 +1,5 @@
-
+//USO DE INTERFACES PARA LA RESOLUCION DE INFROMACION
+// DE ALGUNOS COMPONENTES
 
 export interface RespuestaMDB {
     page: number;

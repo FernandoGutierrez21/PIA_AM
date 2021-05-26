@@ -3,11 +3,12 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col>
-        <h3>Películas Nuevas</h3>
+        <h3>Películas nuevas</h3>
       </ion-col>
     </ion-row>
   </ion-grid>
 
+  <!--Muestra los imagenes de las peliulas-->
   <app-slideshow-backdrop [peliculas]="peliculasRecientes"></app-slideshow-backdrop>
 
 
@@ -19,6 +20,7 @@
     </ion-row>
   </ion-grid>
 
+  <!--Muestra los posters de las peliulas-->
   <app-slideshow-poster [peliculas]="peliculasRecientes"></app-slideshow-poster>
 
   <ion-grid fixed>
@@ -29,6 +31,8 @@
     </ion-row>
   </ion-grid>
 
+  <!--Muestra los posters en pares de slides de las peliulas
+  Y tiene un botón para cargar más si es que lo desean-->
   <app-slideshow-pares [peliculas]="populares"
                        (cargarMas)="cargarMas()"></app-slideshow-pares>
 

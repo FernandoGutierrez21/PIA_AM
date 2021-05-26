@@ -7,11 +7,11 @@ import { ParesPipe } from './pares.pipe';
 
 @NgModule({
   declarations: [
-    ImagenPipe,
+    ImagenPipe, //Para usarlo en pipes
     ParesPipe
   ],
   exports:[
-    ImagenPipe,
+    ImagenPipe, //para exportarlo desde pipes hacia otro componente o servicio
     ParesPipe
   ],
   imports: [
