@@ -16,7 +16,8 @@ export class SlideshowBackdropComponent implements OnInit {
    //Las opciones y su acomodo
   slideOpts = {
     slidesPerView: 1.1,
-    freeMode: true
+    freeMode: true,
+    spaceBetween: -10
   }
 
   constructor(private modalCtrl: ModalController) { }

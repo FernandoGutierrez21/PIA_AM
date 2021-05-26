@@ -1,5 +1,5 @@
 {
-  "name": "peliculasApp",
+  "name": "peliculasapp",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -21,7 +21,9 @@
     "@angular/router": "~11.2.0",
     "@capacitor/android": "3.0.0",
     "@capacitor/app": "1.0.0",
-    "@capacitor/core": "3.0.0",
+    "@capacitor/camera": "^1.0.0",
+    "@capacitor/core": "^3.0.0",
+    "@capacitor/filesystem": "^1.0.0",
     "@capacitor/haptics": "1.0.0",
     "@capacitor/keyboard": "1.0.0",
     "@ionic/angular": "^5.5.2",
@@ -41,7 +43,7 @@
     "@angular/compiler": "~11.2.0",
     "@angular/compiler-cli": "~11.2.0",
     "@angular/language-service": "~11.2.0",
-    "@capacitor/cli": "3.0.0",
+    "@capacitor/cli": "^3.0.0",
     "@ionic/angular-toolkit": "^3.1.1",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
@@ -64,5 +66,14 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.0.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoGutierrez21/PIA_AM.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FernandoGutierrez21/PIA_AM/issues"
+  }
 }

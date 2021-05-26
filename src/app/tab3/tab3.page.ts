@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Genre, PeliculaDetalle } from '../interfaces/interfaces';
 import { DataLocalService } from '../services/data-local.service';
 import { MoviesService } from '../services/movies.service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-tab3',
@@ -17,7 +18,8 @@ export class Tab3Page {
   favoritoGenero: any[] = [];
 
   constructor(private dataLocal: DataLocalService,
-    private moviesService: MoviesService) { }
+    private moviesService: MoviesService,
+    private photosService: PhotoService) { }
 
 
   //muestra las peliculas por genero
@@ -26,6 +28,10 @@ export class Tab3Page {
     this.generos = await this.moviesService.cargarGeneros();
 
     this.pelisPorGenero(this.generos, this.peliculas);
+  }
+
+  onClick(){
+    this.photosService.addNewToGallery();
   }
 
   pelisPorGenero(generos: Genre[], peliculas: PeliculaDetalle[]) {
