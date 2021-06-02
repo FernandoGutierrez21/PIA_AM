@@ -4,6 +4,13 @@ import { Genre, PeliculaDetalle } from '../interfaces/interfaces';
 import { DataLocalService } from '../services/data-local.service';
 import { MoviesService } from '../services/movies.service';
 
+////////////////////////////////////////////////////
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { DbService } from './../services/db.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from "@angular/router";
+////////////////////////////////////////////////////
+
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -16,9 +23,54 @@ export class Tab3Page {
 
   favoritoGenero: any[] = [];
 
-  constructor(private dataLocal: DataLocalService,
-    private moviesService: MoviesService) { }
+  ////////////////////////////////////////////////////
+  mainForm: FormGroup;
+  Data: any[] = []
+////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////
+  constructor(private dataLocal: DataLocalService,
+    private moviesService: MoviesService,
+    private db: DbService,
+    public formBuilder: FormBuilder,
+    private toast: ToastController,
+    private router: Router) { }
+    ////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////
+ngOnInit() {
+  this.db.dbState().subscribe((res) => {
+    if (res) {
+      this.db.fetchFavoritos().subscribe(item => {
+        this.Data = item
+      })
+    }
+  });
+
+  this.mainForm = this.formBuilder.group({
+    pelicula: ['']
+  })
+}
+
+storeData() {
+  this.db.addFavoritos(
+    this.mainForm.value.pelicula,
+  ).then((res) => {
+    this.mainForm.reset();
+  })
+}
+
+deleteSong(id: any) {
+  this.db.deleteFavorito(id).then(async (res) => {
+    let toast = await this.toast.create({
+      message: 'Favorito eliminado',
+      duration: 1500
+    });
+    toast.present();
+  })
+}
+////////////////////////////////////////////////////
 
   //muestra las peliculas por genero
   async ionViewWillEnter() {

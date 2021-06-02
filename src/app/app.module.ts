@@ -11,6 +11,11 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
+////////////////////////////////////////////////////
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+////////////////////////////////////////////////////
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +26,16 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     HttpClientModule, //HTTPCLIENT
     IonicStorageModule.forRoot() //PARA QUE TENGA ACCESO
   ], //Importando el HttpClient
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  ////////////////////////////////////////////////////
+  providers: [
+    SQLite,
+    SQLitePorter,
+    { 
+      provide: RouteReuseStrategy, 
+      useClass: IonicRouteStrategy 
+    }
+  ],
+  ////////////////////////////////////////////////////
   bootstrap: [AppComponent],
 })
 export class AppModule {}

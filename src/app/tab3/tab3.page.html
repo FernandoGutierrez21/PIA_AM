@@ -26,5 +26,41 @@
 
   </div>
 
+<!------------------------------------------------------------------------------>
+<ion-list lines="full">
+    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+      <ion-item>
+        <ion-label position="floating">Nombre película</ion-label>
+        <ion-input formControlName="pelicula" type="text" required></ion-input>
+      </ion-item>
+
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Añadir favorito
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+    <ion-list>
+    <ion-list-header>
+      Películas
+    </ion-list-header>
+
+    <ion-item lines="inset" *ngFor="let data of Data">
+      <ion-label>
+        <h5>{{data.nombre_pelicula}}</h5>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <ion-icon name="create" style="zoom:2.0" [routerLink]="['/pelicula/', data.id]"></ion-icon>        
+        <ion-icon name="trash" style="zoom:2.0" (click)="deleteFavorito(data.id)"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+<!------------------------------------------------------------------------------>
 
 </ion-content>

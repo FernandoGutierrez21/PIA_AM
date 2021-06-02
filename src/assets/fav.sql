@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS favorito(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre_pelicula TEXT, 
+);
